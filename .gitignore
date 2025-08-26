@@ -1,0 +1,23 @@
+# Hide secret keys and environment files
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Ignore all videos except the final demo video
+*.mp4
+!saved_videos/final_demo_video.mp4
+
+# Ignore full media and video folders (except the demo)
+saved_videos/
+!saved_videos/final_demo_video.mp4
+media/
+
+# Ignore temporary image files
+*.png
+*.svg
+
+# Optional - Ignore log/cache files
+*.log
+.cache/

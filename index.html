@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VocaVisio AI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2920/2920277.png"/>
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-white font-sans min-h-screen">
+  <header class="text-center py-6 shadow-md bg-black bg-opacity-70">
+    <h1 class="text-4xl font-extrabold tracking-wide">🎬 VocaVisio AI</h1>
+    <p class="text-gray-300 mt-2">Turn any topic into a voice-narrated animated video</p>
+  </header>
+
+  <main class="max-w-3xl mx-auto mt-10 px-4">
+    <div class="bg-gray-800 bg-opacity-70 p-6 rounded-2xl shadow-xl">
+      <label for="topic" class="block text-xl font-semibold mb-2">Enter Your Topic</label>
+      <input id="topic" type="text" class="w-full px-4 py-2 rounded-lg text-black" placeholder="E.g., How do volcanoes form?">
+      <button onclick="generateVideo()" class="mt-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">🎥 Generate Video</button>
+      
+      <div id="status" class="mt-4 text-green-400 hidden font-medium"></div>
+
+      <div id="videoContainer" class="mt-6 hidden">
+        <video id="resultVideo" controls class="w-full rounded-xl shadow-lg mt-2"></video>
+        <a id="downloadBtn" href="#" download class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hidden">
+          ⬇️ Download Video
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-gray-500 text-sm mt-10 pb-4">
+    &copy; 2025 VocaVisio AI. Built with ❤️ using Flask + Gemini
+  </footer>
+
+  <script>
+    async function generateVideo() {
+      const topic = document.getElementById("topic").value;
+      const status = document.getElementById("status");
+      const videoContainer = document.getElementById("videoContainer");
+      const video = document.getElementById("resultVideo");
+      const downloadBtn = document.getElementById("downloadBtn");
+
+      if (!topic.trim()) {
+        alert("Please enter a topic.");
+        return;
+      }
+
+      status.classList.remove("hidden");
+      status.textContent = "⏳ Generating video, please wait...";
+      videoContainer.classList.add("hidden");
+      downloadBtn.classList.add("hidden");
+
+      try {
+        const response = await fetch("/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ topic }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Server error");
+        }
+
+        const blob = await response.blob();
+        const videoURL = URL.createObjectURL(blob);
+
+        video.src = videoURL;
+        downloadBtn.href = videoURL;
+
+        videoContainer.classList.remove("hidden");
+        downloadBtn.classList.remove("hidden");
+        status.textContent = "✅ Video ready!";
+      } catch (error) {
+        console.error(error);
+        status.textContent = "❌ Failed to generate video. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
