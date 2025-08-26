@@ -74,7 +74,7 @@ To watch it:
 
 #🤝 About Me
 
-Hi, I’m Deepak Raj, a passionate Python developer transitioning into tech.
+Hi, I’m Sushant Tripathi , a passionate Python developer transitioning into tech.
 This project shows my ability to build complete AI tools — from backend logic to frontend UI and deployment-ready structure.
 
 I'm currently open to remote developer roles in:
@@ -87,8 +87,9 @@ Automation tools
 
 #📬 Contact
 
-📧 Email: [deepakraj4198@gmail.com] 
+📧 Email: [sushantmanitripathiji@gmail.com] 
 
-💻 GitHub: https://github.com/Nexalytic
+💻 GitHub: https://github.com/Sushantmanitripathi
+
 
 ⭐ If you found this project helpful or want to collaborate, feel free to connect!
