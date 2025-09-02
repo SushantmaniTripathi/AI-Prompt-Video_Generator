@@ -72,19 +72,6 @@ To watch it:
 - Then click `View raw` to download and view it
 
 
-#🤝 About Me
-
-Hi, I’m Sushant Tripathi , a passionate Python developer transitioning into tech.
-This project shows my ability to build complete AI tools — from backend logic to frontend UI and deployment-ready structure.
-
-I'm currently open to remote developer roles in:
-
-Python
-
-AI SaaS
-
-Automation tools
-
 #📬 Contact
 
 📧 Email: [sushantmanitripathiji@gmail.com] 
@@ -93,3 +80,4 @@ Automation tools
 
 
 ⭐ If you found this project helpful or want to collaborate, feel free to connect!
+
