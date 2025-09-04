@@ -23,7 +23,7 @@ Follow these exact steps:
 ```bash
 # 1. Clone the Repository
 ```bash
-git clone https://github.com/Nexalytic/ai-video-generator.git
+git clone https://github.com/SushantmaniTripathi/AI-Prompt-Video_Generator.git
 cd ai-video-generator
 
 # 2. Create and activate virtual environment (Windows)
@@ -80,4 +80,5 @@ To watch it:
 
 
 ⭐ If you found this project helpful or want to collaborate, feel free to connect!
+
 
