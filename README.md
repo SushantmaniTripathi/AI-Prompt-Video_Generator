@@ -10,7 +10,7 @@
 <p align="center">Built with the tools and technologies:</p>
 <p align="center">
 	<a href="https://skillicons.dev">
-		<img src="https://skillicons.dev/icons?i=html,Python,js,ai">
+		<img src="https://skillicons.dev/icons?i=html,py,js,ai,pytorch,flask">
 	</a></p>
 <br>
 
@@ -220,5 +220,6 @@ This project is protected under the [SELECT-A-LICENSE](https://choosealicense.co
 - List any resources, contributors, inspiration, etc. here.
 
 ---
+
 
 
